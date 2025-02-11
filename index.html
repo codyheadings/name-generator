@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="index.css">
+    <title>Home | NameGen</title>
+</head>
+<body>
+    <header>Fantasy Name Generators</header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h3>Fantasy Name Generators</h3>
+
+        <h4>Character Name Generator:</h4>
+        <p id="char-output"></p>
+        <button id="generate-char" onclick="charName(1)">Generate</button>
+        <button id="generate-char-five" onclick="charName(5)">Generate 5</button>
+        <button id="generate-char-ten" onclick="charName(10)">Generate 10</button>
+        <button id="generate-char-50" onclick="charName(50)">Generate 50</button>
+        <button id="generate-char-100" onclick="charName(100)">Generate 100</button>
+
+
+        <h4>Country/Kingdom Name Generator:</h4>
+        <p id="country-output"></p>
+        <button id="generate-country" onclick="countryName()">Generate</button>
+    </main>
+    <footer>
+
+    </footer>
+<script src="index.js"></script>
+</body>
+</html>
