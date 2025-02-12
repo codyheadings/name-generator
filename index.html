@@ -18,22 +18,41 @@
 
         <h4>Character Name Generator:</h4>
         <p id="char-output"></p>
-        <button id="generate-char" onclick="charName(1)">Generate</button>
-        <button id="generate-char-five" onclick="charName(5)">Generate 5</button>
-        <button id="generate-char-ten" onclick="charName(10)">Generate 10</button>
-        <button id="generate-char-50" onclick="charName(50)">Generate 50</button>
-        <button id="generate-char-100" onclick="charName(100)">Generate 100</button>
-
+        <div id="columns">
+            <div class="column">
+                <button id="generate-char" onclick="charName(1)">Generate</button>
+                <button id="generate-char-five" onclick="charName(5)">Generate 5</button>
+                <button id="generate-char-ten" onclick="charName(10)">Generate 10</button>
+                <button id="generate-char-25" onclick="charName(25)">Generate 25</button>
+                <button id="generate-char-50" onclick="charName(50)">Generate 50</button>
+                <button id="generate-char-100" onclick="charName(100)">Generate 100</button>
+            </div>
+            <div class="column">
         <button id="generate-elf" onclick="elfName(5)">Generate Elves</button>
         <button id="generate-orc" onclick="orcName(5)">Generate Orcs</button>
+            </div>
+        </div>
+        <br>
+        <input type="checkbox" id="enable-last"><label for="enable-last">Include Surnames</label>
+        <br>
+        <input type="checkbox" id="alphabetize"><label for="alphabetize">Alphabetize</label>
 
 
         <h4>Country/Kingdom Name Generator:</h4>
         <p id="country-output"></p>
-        <button id="generate-country" onclick="countryName()">Generate</button>
+        <div id="columns2">
+            <div class="column">
+                <button id="generate-country" onclick="countryName(1)">Generate</button>
+                <button id="generate-country-5" onclick="charName(5)">Generate 5</button>
+                <button id="generate-country-ten" onclick="charName(10)">Generate 10</button>
+                <button id="generate-country-25" onclick="charName(25)">Generate 25</button>
+                <button id="generate-country-50" onclick="charName(50)">Generate 50</button>
+                <button id="generate-country-100" onclick="charName(100)">Generate 100</button>
+            </div>
+        </div>
     </main>
     <footer>
-
+        <p>2025 Cody Headings</p>
     </footer>
 <script src="index.js"></script>
 </body>
