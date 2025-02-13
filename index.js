@@ -149,10 +149,54 @@ console.log(removeRedundancyTwos("Talalin")); // "Talin"
 console.log(removeRedundancyTwos("Formalial")); // "Formail"
 console.log(removeRedundancy("Formaltialt")); // "Formialt"
 
-function countryName(){
+function countryName(times){
+    document.getElementById("country-output").innerHTML = "";
+
+    const pre = ["Ava", "Sera", "Ton", "Thorn", "Der", "Mor"];
+    const mid = ["la", "tia", "fin", "cor"];
+    const end = ["del", "a", "don", "land", "kia", "sia", "lon", "dor"];
+
+    const style = ["short", "medium", "long"];
+
+    let output = "";
     let name;
 
-    document.getElementById("country-output").innerHTML = name;
+    for (let i = 0; i < times; i++) {
+        let nameLength = getRandomElement(style);
+
+        if (nameLength === "short") {
+            name = getRandomElement(pre) + getRandomElement(consonant) + getRandomElement(end);
+        } else if (nameLength === "medium") {
+            name = getRandomElement(pre) + getRandomElement(mid) + getRandomElement(end);
+        } else{
+            name = getRandomElement(pre)+ getRandomElement(consonant) + getRandomElement(vowel) + getRandomElement(mid) + getRandomElement(end);
+        }
+
+        name = name.charAt(0).toUpperCase() + name.substr(1);
+        name = removeRedundancy(name);
+        name = removeRedundancyTwos(name);
+        name = removeVowelDupes(name);
+        name = correctHTOrder(name);
+        name = threeConsonantChoice(name);
+        name = threeConsonantChoice(name);
+
+        output += name + "<br>";
+
+    }
+    if(document.getElementById("alphabetize-c").checked) {
+        let names = output.split("<br>");
+        names = names.sort();
+        output = names.join("<br>");
+        output = output.substring(4, output.length) //cut off leading line break
+    }
+
+    if (times > 10) {
+        document.getElementById("country-output").classList.add("multi-column");
+    } else {
+        document.getElementById("country-output").classList.remove("multi-column");
+    }
+
+    document.getElementById("country-output").innerHTML = output;
 }
 
 function getRandomInt(min, max){

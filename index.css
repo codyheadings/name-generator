@@ -43,7 +43,7 @@ nav ul li a{
 
 main{
     width: 100%;
-    height: 100vh;
+    height: 90%;
     background-color: #F5F5F5;
 }
 
@@ -104,8 +104,6 @@ button:hover{
     border: 1px solid #ccc;
     padding: 10px;
     font-family: Arial, sans-serif;
-    column-gap: 5px;
-    column-count: 1;
     font-size: 1rem;
 }
 
