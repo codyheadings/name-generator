@@ -44,7 +44,7 @@ nav ul li a{
 main{
     width: 100%;
     height: 90%;
-    background-color: #F5F5F5;
+    background-color: white;
 }
 
 #columns{
@@ -161,7 +161,7 @@ footer a{
     main{
         width: 100%;
         height: 100vh;
-        background-color: #F5F5F5;
+        background-color: white;
     }
 
     main p{
