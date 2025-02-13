@@ -47,66 +47,6 @@ main{
     background-color: #F5F5F5;
 }
 
-#columns{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.column{
-    display: block;
-    width: 50%;
-    margin-left: 5vw;
-}
-
-input{
-    margin-left: .5vw;
-}
-
-label{
-    margin: 1vh .5vw;
-}
-
-button{
-    background-color: #156064ff;
-    color: white;
-    width: 30%;
-    min-width: 130px;
-    padding: .5vh .5vw;
-    margin-bottom: 1vh;
-    margin-left: 1vw;
-}
-
-button:hover{
-    background-color: cadetblue;
-    color: #156064ff;
-}
-
-#char-output{
-    min-height: 210px;
-    max-height: 400px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-}
-
-.multi-column{
-    column-count: 5;
-    column-gap: 20px;
-}
-
-#country-output{
-    min-height: 210px;
-    max-height: 400px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-}
-
 main h3{
     font-size: calc(8px + 2vw);
     margin: 1vh 1vw;
@@ -133,26 +73,11 @@ footer{
     bottom: 0;
 }
 
-footer a{
+a{
     color: #156064ff
 }
 
 @media screen and (max-width: 975px){
-
-    nav ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: #2e282aff;
-        list-style: none;
-        padding: 0;
-    }
-
-    nav ul li{
-        font-size: calc(2px + 1.5vw);
-        padding: 1% 0.5%;
-        margin: 1% 0.5%;
-    }
 
     nav ul li a{
         text-decoration: none;
@@ -185,46 +110,6 @@ footer a{
         margin: 1vh 1vw;
     }
 
-    #char-output{
-        font-size: calc(6px + 1vw);
-        min-height: 175px;
-        max-height: 635px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        padding: 10px;
-        font-family: Arial, sans-serif;
-    }
-
-    button{
-        display: block;
-        width: 60%;
-        font-size: calc(6px + 1.5vw);
-        padding: 1% 0.75%;
-        margin: 1.0% auto;
-    }
-
-    .multi-column{
-        column-count: 3;
-        column-gap: 10px;
-    }
-
-    #columns{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    #columns2{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .column{
-        display: block;
-        width: 50%;
-    }
-
     nav ul{
         display: flex;
         flex-direction: row;
@@ -246,15 +131,6 @@ footer a{
 
     }
 
-    label{
-        font-size: calc(6px + 1.5vw);
-        margin: 1vh 1.5vw;
-    }
-
-    input{
-        margin-left: 2vw;
-    }
-
     nav ul li a{
         text-decoration: none;
         color: white;
@@ -271,28 +147,6 @@ footer a{
 }
 
 @media screen and (max-width: 400px){
-    .multi-column{
-        column-count: 2;
-        column-gap: 5px;
-    }
-
-    #char-output{
-        font-size: calc(6px + 1.45vw);
-        min-height: 145px;
-        max-height: 700px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        padding: 10px;
-        font-family: Arial, sans-serif;
-    }
-
-    button{
-        display: block;
-        width: 70%;
-        font-size: calc(6px + 2vw);
-        padding: 1.5% 0.5%;
-        margin: 1.5% auto;
-    }
 
     nav ul{
         display: flex;
@@ -313,15 +167,6 @@ footer a{
         margin: .1% 0.5%;
         text-align: center;
 
-    }
-
-    label{
-        font-size: calc(6px + 2.5vw);
-        margin: 1vh 1.5vw;
-    }
-
-    input{
-        margin-left: 5vw;
     }
 
     nav ul li a{

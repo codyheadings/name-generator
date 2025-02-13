@@ -174,7 +174,7 @@ function countryName(times){
 
         name = name.charAt(0).toUpperCase() + name.substr(1);
         name = removeRedundancy(name);
-        name = removeRedundancyTwos(name);
+        //name = removeRedundancyTwos(name);
         name = removeVowelDupes(name);
         name = correctHTOrder(name);
         name = threeConsonantChoice(name);
