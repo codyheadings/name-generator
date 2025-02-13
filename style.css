@@ -8,8 +8,16 @@ header{
     flex-direction: column;
     padding: 1.5vh 1vw;
     background-color: #156064ff;
+}
+
+header h1{
     color: white;
-    font-size: calc(6px + 1.1vw);
+    font-size: calc(6px + 1.2vw);
+}
+
+header p{
+    color: white;
+    font-size: calc(6px + .5vw);
 }
 
 .dark-mode {
@@ -103,6 +111,25 @@ main{
     background-color: white;
 }
 
+.wrapper{
+    width: 90%;
+    margin: auto;
+}
+
+a{
+    color: #156064ff
+}
+
+main ul{
+    margin: 1vh 1vw;
+    font-size: calc(10px + .5vw);
+    padding-bottom: 1vh;
+}
+
+main ul li{
+    margin: .75vh;
+}
+
 #columns{
     display: flex;
     flex-direction: row;
@@ -169,6 +196,7 @@ main h3{
     font-size: calc(8px + 2vw);
     margin: 1vh 1vw;
     text-align: center;
+    padding-bottom: 1vh;
 }
 
 main h4{
@@ -196,6 +224,14 @@ footer a{
 }
 
 @media screen and (max-width: 975px){
+
+    header h1{
+        font-size: calc(12px + 1.2vw);
+    }
+
+    header p{
+        font-size: calc(10px + .5vw);
+    }
 
     #screen-mode {
         position: absolute;
@@ -338,7 +374,7 @@ footer a{
     }
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 410px){
 
     #screen-mode {
         position: absolute;
@@ -372,6 +408,7 @@ footer a{
         font-size: calc(6px + 2vw);
         padding: 1.5% 0.5%;
         margin: 1.5% auto;
+        min-width: 110px;
     }
 
     nav ul{
