@@ -3,21 +3,74 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.italianno-regular {
+    font-family: "Italianno", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tangerine-regular {
+    font-family: "Tangerine", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bodoni-moda-400 {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 header{
     display: flex;
     flex-direction: column;
     padding: 1.5vh 1vw;
     background-color: #156064ff;
+    width: 25%;
 }
 
 header h1{
     color: white;
-    font-size: calc(6px + 1.2vw);
+    font-size: calc(16px + 1.8vw);
+    font-family: 'Tangerine', serif;
+    padding-bottom: .75vh;
+    font-weight: 400;
 }
 
 header p{
+    padding-top: 1vh;
     color: white;
     font-size: calc(6px + .5vw);
+    font-family: 'Times New Roman', serif;
+}
+
+header hr{
+    width: calc(8vw + 35px);
+}
+
+.headnav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2e282aff;
+    width: 100%;
+    border-bottom: 1px solid #2e282aff;
+}
+
+.dark-mode .headnav{
+    border-bottom: 2px solid #2e282aff;
 }
 
 .dark-mode {
@@ -59,8 +112,8 @@ header p{
 
 #screen-mode {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 30px;
+    right: 30px;
     padding: 8px 15px;
     border: none;
     background: #222;
@@ -92,10 +145,10 @@ nav ul{
 }
 
 nav ul li{
-    font-size: calc(4px + 1vw);
+    font-size: calc(6px + 1.2vw);
     width: 90%;
     background-color: #156064ff;
-    padding: .35% 0.5%;
+    padding: 3vh 0.5%;
     margin: .1% 0.5%;
     text-align: center;
 }
@@ -109,10 +162,12 @@ main{
     width: 100%;
     height: 90%;
     background-color: white;
+    padding-bottom: 50px;
+    flex:1;
 }
 
 .wrapper{
-    width: 90%;
+    width: 93%;
     margin: auto;
 }
 
@@ -167,6 +222,14 @@ main button:hover{
     color: #156064ff;
 }
 
+#revert{
+    background-color: #1F9594;
+}
+#revert:hover{
+    background-color: #80c6c8;
+    color: #1F9594;
+}
+
 #char-output{
     min-height: 210px;
     max-height: 400px;
@@ -179,7 +242,11 @@ main button:hover{
 
 .multi-column{
     column-count: 5;
-    column-gap: 20px;
+    column-gap: 10px;
+}
+
+.single-column{
+    column-count: 1;
 }
 
 #country-output{
@@ -193,14 +260,15 @@ main button:hover{
 }
 
 main h3{
-    font-size: calc(8px + 2vw);
+    font-size: calc(12px + 1.4vw);
     margin: 1vh 1vw;
     text-align: center;
     padding-bottom: 1vh;
+    padding-top: 2vh;
 }
 
 main h4{
-    font-size: calc(12px + 1vw);
+    font-size: calc(10px + 1vw);
     margin: 1vh 1vw;
 }
 
@@ -209,28 +277,39 @@ main p{
     font-size: calc(10px + .5vw);
 }
 
-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 1vh 1vw;
+footer {
     background-color: white;
-    position: relative;
-    bottom: 0;
+    padding: 1vh 1vw;
+    text-align: center;
 }
 
 footer a{
     color: #156064ff
 }
 
-@media screen and (max-width: 975px){
+@media screen and (max-width: 1080px){
+
+    header{
+        width: 100%;
+    }
 
     header h1{
-        font-size: calc(12px + 1.2vw);
+        font-size: calc(14px + 3vw);
+        padding-bottom: .5vh;
     }
 
     header p{
-        font-size: calc(10px + .5vw);
+        padding-top: 0;
+        font-size: calc(8px + 1vw);
+    }
+
+    header hr{
+        display: none;
+    }
+
+    .headnav{
+        display: flex;
+        flex-direction: column;
     }
 
     #screen-mode {
@@ -260,6 +339,7 @@ footer a{
 
     nav ul li a{
         text-decoration: none;
+        font-size: calc(10px + 1.5vw);
     }
 
     main{
@@ -270,17 +350,17 @@ footer a{
 
     main p{
         margin: 2% 2%;
-        font-size: calc(3px + 2vw);
+        font-size: calc(4px + 1.8vw);
     }
 
     main h3{
-        font-size: calc(8px + 3vw);
+        font-size: calc(12px + 2.2vw);
         margin: 1vh 1vw;
         text-align: center;
     }
 
     main h4{
-        font-size: calc(10px + 2vw);
+        font-size: calc(8px + 2vw);
         margin: 1vh 1vw;
     }
 
@@ -289,9 +369,13 @@ footer a{
         margin: 1vh 1vw;
     }
 
+    main ul{
+        font-size: calc(4px + 1.8vw);
+    }
+
     #char-output{
         font-size: calc(6px + 1vw);
-        min-height: 175px;
+        min-height: 225px;
         max-height: 635px;
         overflow-y: auto;
         border: 1px solid #ccc;
@@ -308,7 +392,7 @@ footer a{
     }
 
     .multi-column{
-        column-count: 3;
+        column-count: 4;
         column-gap: 10px;
     }
 
@@ -351,7 +435,7 @@ footer a{
     }
 
     label{
-        font-size: calc(6px + 1.5vw);
+        font-size: calc(8px + 1vw);
         margin: 1vh 1.5vw;
     }
 
@@ -370,32 +454,42 @@ footer a{
     }
 
     footer{
-        padding: 2vh 1vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 1vh 1vw;
+        background-color: white;
+        position: relative;
+        bottom: 0;
     }
 }
 
-@media screen and (max-width: 410px){
+@media screen and (max-width: 790px){
+
+    .wrapper{
+        width: 98%;
+    }
 
     #screen-mode {
         position: absolute;
         top: 6px;
         right: 6px;
-        width: 16%;
-        padding: 4px 8px;
+        width: 17%;
+        padding: 9px 8px;
         border: none;
-        font-size: calc(6px + 1vw);
+        font-size: calc(6px + 1.2vw);
         border-radius: 5px;
     }
 
     .multi-column{
-        column-count: 2;
+        column-count: 3;
         column-gap: 5px;
     }
 
     #char-output{
-        font-size: calc(6px + 1.45vw);
-        min-height: 145px;
-        max-height: 700px;
+        font-size: calc(6px + 1vw);
+        min-height: 175px;
+        max-height: 600px;
         overflow-y: auto;
         border: 1px solid #ccc;
         padding: 10px;
@@ -426,7 +520,7 @@ footer a{
         font-size: calc(6px + 2.5vw);
         width: 90%;
         background-color: #156064ff;
-        padding: 3% .5%;
+        padding: 2% .5%;
         margin: .1% 0.5%;
         text-align: center;
 
@@ -449,5 +543,47 @@ footer a{
     header{
         font-size: calc(8px + 4vw);
         align-items: center;
+    }
+}
+
+@media screen and (max-width: 475px) {
+
+    header h1{
+        font-size: calc(14px + 6vw);
+        padding-bottom: 0;
+    }
+
+    header p{
+        display: none;
+    }
+
+    .wrapper {
+        width: 96%;
+    }
+
+    #screen-mode {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 16%;
+        padding: 4px 8px;
+        border: none;
+        font-size: calc(6px + 1.5vw);
+        border-radius: 5px;
+    }
+
+    .multi-column {
+        column-count: 2;
+        column-gap: 5px;
+    }
+
+    #char-output{
+        font-size: calc(6px + 1.3vw);
+        min-height: 165px;
+        max-height: 750px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-family: Arial, sans-serif;
     }
 }

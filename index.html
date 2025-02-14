@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="A website used to create names for characters in your novel or game.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Italianno&family=Tangerine&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="src/sobriquet-logo.png">
     <title>Home | Sobriquet</title>
 </head>
 <body>
+<div class="container">
 <script src="screen-mode.js"></script>
+    <div class="headnav">
     <header>
         <h1>Sobriquet</h1>
+        <hr>
         <p><em>A "Sophisticated" Name Generator</em></p>
         <button id="screen-mode">Dark Mode</button>
     </header>
@@ -19,6 +26,7 @@
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
+    </div>
     <main class="wrapper">
         <h3>Novel Name Generators</h3>
 
@@ -34,14 +42,17 @@
                 <button id="generate-char-100" onclick="charName(100)">Generate 100</button>
             </div>
             <div class="column">
-        <button id="generate-elf" onclick="elfName(5)">Generate Elves</button>
-        <button id="generate-orc" onclick="orcName(5)">Generate Orcs</button>
+                <button id="generate-elf" onclick="elfName(5)">Generate Elves</button>
+                <button id="generate-orc" onclick="orcName(5)">Generate Orcs</button>
+                <br>
+                <button id="revert" onclick="revert()">Previous</button>
             </div>
         </div>
         <br>
         <input type="checkbox" id="enable-last"><label for="enable-last">Include Surnames</label>
         <br>
         <input type="checkbox" id="alphabetize"><label for="alphabetize">Alphabetize</label>
+        <br><br>
 
 
         <h4>Country/Kingdom Name Generator:</h4>
@@ -60,8 +71,9 @@
         <input type="checkbox" id="alphabetize-c"><label for="alphabetize-c">Alphabetize</label>
     </main>
     <footer>
-        <p>Cody Headings | Version: v0.0.7 Feb 2025</p>
+        <p>Cody Headings | Version: v0.0.8 Feb 2025</p>
     </footer>
     <script src="index.js"></script>
+</div>
 </body>
 </html>

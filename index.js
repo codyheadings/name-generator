@@ -7,6 +7,7 @@ const consonant = ['x', 'qu', 'z', 'y', 'w', 'j', 'v', 'r', 't', 'p', 's', 'd', 
     'k', 'l', 'm', 'n', 'c', 'b'];
 
 function charName(times){
+    localStorage.setItem("previousGen", document.getElementById("char-output").innerHTML);
     document.getElementById("char-output").innerHTML = "";
     const first = ["Ro", "Yr", "Co", "Al", "Kal", "Li", "Bas", "Mor", "Ket", "Sen", "Brin", "Pol", "Tora", "N'",
         "Vel", "Way", "Re", "Mont", "Jul"];
@@ -18,10 +19,10 @@ function charName(times){
     const mid = ["tan", "del", "ler", "lin", "din", "nar", "ten"];
     const end = ["e", "a", "o", "ia", "iar", "ien", "ian", "in", "an", "on", "ar", "ette", "ina", "el"];
 
-    const preLast = ["Ra", "Whi", "Bla", "Sto", "Rai", "Ri", "Hea", "Po", "Hi", "Hawe", "Ever"];
+    const preLast = ["Ra", "Whi", "Bla", "Sto", "Rai", "Ri", "Hea", "Po", "Hi", "Hawe", "Ever", "Lo", "Stro"];
     const midLast = ["ven", "t", "ck", "ne", "n", "ver", "de", "ra", "ng", "th", "net", "ss"];
     const sufLast = ["craft", "croft", "sine", "son", "holm", "more", "lin", "nis", "ber", "", "thorn", "ham",
-        "smith", "cliff", "born", "wood", "bell", "rose", "shaw", "ton", "ward", "brand", "win", "er"];
+        "smith", "cliff", "born", "wood", "bell", "rose", "shaw", "ton", "ward", "brand", "win", "er", "mire"];
 
     const switchName = ["oah", "ohan", "ora", "aura", "aleb", "ian", "iana", "owan", "owen", "aden", "alan",
         "arold", "ivette", "abina", "avier", "errick", "rent"]
@@ -73,6 +74,9 @@ function charName(times){
         last = removeRedundancy(last);
         last = correctHTOrder(last);
         last = removeSSS(last);
+        last = fixSgton(last);
+        last = fixSine(last);
+        last = removeHH(last);
 
 
         output += name + last + "<br>";
@@ -86,9 +90,12 @@ function charName(times){
     }
 
     if (times > 10) {
+        document.getElementById("char-output").classList.remove("single-column");
         document.getElementById("char-output").classList.add("multi-column");
     } else {
         document.getElementById("char-output").classList.remove("multi-column");
+        document.getElementById("char-output").classList.add("single-column");
+
     }
 
     document.getElementById("char-output").innerHTML = output;
@@ -142,6 +149,19 @@ function removeRedundancyTwos(string) {
     return st;
 }
 
+function removeHH(string) {
+    let st = "";
+    for (let i = 0; i <= string.length -1; i++) {
+        if (string[i] === 'h' && string[i+1] === 'h') {
+            //skip
+        } else {
+            st+=string[i]
+        }
+    }
+    return st;
+}
+
+console.log(removeHH("Ethhorn"))
 console.log(removeRedundancy("Tornadorn"));  // Outputs: "Tadorn"
 console.log(removeRedundancy("Boraora"));    // Outputs: "Bora"
 console.log(removeRedundancy("Orsensen")); // "Orsen"
@@ -487,7 +507,7 @@ function threeConsonantChoice(str){
 function removeSSS(str){
     let result = "";
     for (let i = 0; i < str.length; i++) {
-        if (i > 0 && i < str.length && str[i-1] === str[i] && str[i] && str[i] ===str[i+1] && str[i] === "s") {
+        if (i > 0 && i < str.length-1 && str[i-1] === str[i] && str[i] ===str[i+1] && str[i] === "s") {
             //skip middle s
         } else {
             result += str[i];
@@ -496,4 +516,43 @@ function removeSSS(str){
     return result;
 }
 
+function fixSgton(str){
+    let result = "";
+    for (let i = 0; i < str.length; i++) {
+        if (i < str.length-2 && str[i].toLowerCase() === 's' && str[i+1] === 'g' && str[i+2] === "t") {
+            result += str[i];
+            result += getRandomElement(vowel);
+        } else {
+            result += str[i];
+        }
+    }
+    return result;
+}
+
+function fixSine(str){
+    if (str.length > 3 && (str[0] === 'H' ||str[0] === 'R')){
+        if (str[1] === 's' || (str[1] === 't' && str[2] === 's')){
+            str = str.substring(0,1) + getRandomElement(vowel) + str.substring(1);
+        }
+    }
+    return str;
+}
+
 console.log(removeSSS("Osss"));
+console.log(fixSgton("Sgton"));
+console.log(fixSine("Rsine"));
+console.log(fixSine("Rtsine"));
+console.log(fixSine("Hsine"));
+console.log(fixSine("Htsine"));
+
+function revert(){
+    let prev = localStorage.getItem("previousGen");
+    if(prev.split("<br>").length-1>10){
+        document.getElementById("char-output").classList.remove("single-column");
+        document.getElementById("char-output").classList.add("multi-column");
+    } else {
+        document.getElementById("char-output").classList.remove("multi-column");
+        document.getElementById("char-output").classList.add("single-column");
+    }
+    document.getElementById("char-output").innerHTML = prev;
+}
