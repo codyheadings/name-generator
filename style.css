@@ -377,10 +377,12 @@ footer a{
         font-size: calc(6px + 1vw);
         min-height: 225px;
         max-height: 635px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        padding: 10px;
-        font-family: Arial, sans-serif;
+    }
+
+    #country-output{
+        font-size: calc(6px + 1vw);
+        min-height: 225px;
+        max-height: 635px;
     }
 
     main button{
@@ -490,10 +492,12 @@ footer a{
         font-size: calc(6px + 1vw);
         min-height: 175px;
         max-height: 600px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        padding: 10px;
-        font-family: Arial, sans-serif;
+    }
+
+    #country-output{
+        font-size: calc(6px + 1vw);
+        min-height: 175px;
+        max-height: 600px;
     }
 
     main button{
@@ -581,9 +585,11 @@ footer a{
         font-size: calc(6px + 1.3vw);
         min-height: 165px;
         max-height: 750px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        padding: 10px;
-        font-family: Arial, sans-serif;
+    }
+
+    #country-output{
+        font-size: calc(6px + 1.3vw);
+        min-height: 165px;
+        max-height: 750px;
     }
 }
